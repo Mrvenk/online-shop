@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Online Shopping</title>
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: hotpink;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: xx-large;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Mobile Navigation - White Box */
+        .nav-links-mobile {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            background-color: white;
+            position: absolute; /* Change to absolute for positioning */
+            top: 60px; /* Position below the navbar */
+            right: 20px; /* Align with the right edge */
+            width: 200px; /* Adjust width as needed */
+            height: auto; /* Allow auto height based on content */
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensures it's on top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-20px); /* Slide down effect */
+        }
+
+        .nav-links-mobile.active {
+            display: flex; /* Show mobile links when active */
+            transform: translateY(0); /* Slide in effect */
+        }
+
+        .nav-links-mobile li {
+            margin: 10px 0;
+        }
+
+        .nav-links-mobile a {
+            color: hotpink;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* Main Content Styles */
+        a:hover {
+            color: black;
+        }
+
+        a {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .about {
+            padding: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none; /* Hide desktop nav links */
+            }
+
+            .hamburger {
+                display: flex; /* Show the hamburger menu */
+            }
+
+            .nav-links-mobile {
+                display: none; /* Initially hide the mobile menu */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logi1.png" alt="shop Logo" style="max-width: 100px;">
+            <h1>Online Shopping</h1>
+        </div>
+
+        <!-- Hamburger Menu (three-bar icon) -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+
+        <!-- Mobile Navigation Links -->
+        <ul class="nav-links-mobile" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Online Shopping, your one-stop destination for all your shopping needs. We aim to provide you with a seamless and enjoyable online shopping experience.</p>
+        <p>Our mission is to offer a wide range of high-quality products at affordable prices. We are dedicated to customer satisfaction and strive to exceed your expectations with every purchase.</p>
+        <p>Thank you for choosing Online Shopping for your online shopping needs. We look forward to serving you!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Online Shopping</p>
+        <p>Contact us - Mr. Venky :)</p>
+    </footer>
+    
+    <h2 style="text-align:center;">Keep Shopping &#128522;</h2>
+
+    <script>
+        // Toggle the display of the mobile menu
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active'); // Toggle active class to slide menu
+        }
+    </script>
+</body>
+</html>

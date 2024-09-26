@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Shopping</title>
+</head>
+<body>
+<style>
+  
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:hotpink;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.booking-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-family:cursive;
+}
+
+input, select {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color:hotpink;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+option{
+    font-family: cursive;
+}
+</style>
+
+    <header>
+        <h1>Product Booking Form</h1>
+    </header>
+
+    <section class="booking-form">
+        <form id="product-booking-form" method="post" action="cart.php">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="product">Select Product:</label>
+            <select id="product" name="product">
+                <option value="Men's sports shoes">Men's sports shoes</option>
+                <option value="Earrings">Earrings</option>
+                <option value="Men's Leather Belt">Men's Leather Belt</option>
+                <option value="Black floral Skirt">Black floral Skirt</option>
+                <option value="Shampoo,Condtioner and Facepacks">Shampoo,Condtioner and Facepacks</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Watches">Watches</option>
+                <option value="PartyWear">PartyWear</option>
+                <option value="CropTop">CropTop</option>
+                <option value="Baby Shoes">Baby Shoes</option>
+                <option value="Padhuka">Padhuka</option>
+                
+                <!-- Add more product options here -->
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <button type="submit" onclick="sindhu()">Submit Booking</button>
+        </form>
+    </section>
+
+    <script>
+
+    function sindhu(){
+        alert("product ordered succefully.")
+    }
+       
+
+    </script>
+</body>
+</html>

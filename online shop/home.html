@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    
+</head>
+<body>
+
+    <style>
+        /* Add your CSS styles here */
+
+/* Navbar Styles */
+.navbar {
+    background-color:hotpink;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.navbar h1 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size:xx-large;
+}
+
+/* Main Content Styles */
+.main-content {
+   
+    background-image: url(images/banner-1.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    top: 19%;
+    position: absolute;
+    
+   
+}
+
+a:hover{
+    color:black;
+}
+a{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.trend{
+    color:hotpink;
+   font-family: 'Times New Roman', Times, serif; 
+   font-weight:bolder;
+}
+.title{   
+
+    position: absolute;
+    right: 80%;
+    top: 20% ;
+  
+   width: 200px;
+   
+}
+.para{
+    color: black;
+  font-weight: bolder;
+  font-size:x-large;
+}
+
+button:hover{
+    color:black;
+    background-color:sandybrown;
+    border: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+
+}
+button{
+    color:white;
+    background-color:hotpink;
+    border: none;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
+  
+}
+    </style>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logi1.png" alt="shop Logo">
+            <h1>Online Shopping</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>&nbsp &nbsp &nbsp
+           
+            <li><a href="about.html">About Us</a></li>&nbsp &nbsp &nbsp
+            <li><a href="login.html">Login</a></li>&nbsp &nbsp &nbsp
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome to Online Shopping</h1>
+      <div class="title">
+          
+        <h1 class="trend">Trending Item</h1>
+        <p class="para"> WOMEN'S LATEST FASHION SALE </p>
+      
+        <button><a href="">SHOP NOW</a></button>
+      </div>
+        <!-- You can add more content here -->
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: hotpink;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: xx-large;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Mobile Navigation - White Box */
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute; /* Change to absolute for positioning */
+            top: 60px; /* Position below the navbar */
+            right: 20px; /* Align with the right edge */
+            width: 200px; /* Adjust width as needed */
+            height: auto; /* Allow auto height based on content */
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensures it's on top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-20px); /* Slide down effect */
+        }
+
+        .nav-links-mobile.active {
+            display: flex;
+            transform: translateY(0); /* Slide in effect */
+        }
+
+        .nav-links-mobile li {
+            margin: 10px 0;
+        }
+
+        .nav-links-mobile a {
+            color: hotpink;
+            font-size: 18px;
+            text-decoration: none;
+        }
+/* Mobile Navigation - White Box */
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute; /* Change to absolute for positioning */
+            top: 60px; /* Position below the navbar */
+            right: 20px; /* Align with the right edge */
+            width: 200px; /* Adjust width as needed */
+            height: auto; /* Allow auto height based on content */
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensures it's on top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-20px); /* Slide down effect */
+        }
+
+        .nav-links-mobile.active {
+            display: flex;
+            transform: translateY(0); /* Slide in effect */
+        }
+
+        .nav-links-mobile li {
+            margin: 10px 0;
+        }
+
+        .nav-links-mobile a {
+            color: hotpink;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .main-content {
+            width: 100%;
+            height: auto;
+            background-color: lavenderblush;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+
+        /* Product Styles */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            background-color: white;
+            transition: transform .3s;
+            border-radius: 10px;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .add-to-cart {
+            background-color: pink;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ff69b4; /* Hot pink */
+        }
+
+        .ORDER {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide regular nav links on small screens */
+            }
+
+            .hamburger {
+                display: flex; /* Show hamburger menu on small screens */
+            }
+
+            .product {
+                width: 90%; /* Make products full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logi1.png" alt="Shop Logo">
+            <h1>Online Shopping</h1>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div ></div>
+            <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+            
+        </ul>
+        <!-- Mobile Navigation Links -->
+        <ul class="nav-links-mobile" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+           
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Trending Products</h1>
+        <div class="product-list">
+            <div class="product">
+                <img src="images/sports-2.jpg" alt="Men's Sports Shoes">
+                <h2>Men's Sports Shoes</h2>
+                <p>Trekking and running shoes - Black.</p>
+                <p>Price: 2449 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/jewellery-1.jpg" alt="Earrings">
+                <h2>Earrings</h2>
+                <p>Rose Gold earrings.</p>
+                <p>Price: 1098 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/belt.jpg" alt="Men's Leather Belt">
+                <h2>Men's Leather Belt</h2>
+                <p>High-quality leather belt.</p>
+                <p>Price: 999 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/clothes-4.jpg" alt="Black Floral Skirt">
+                <h2>Black Floral Skirt</h2>
+                <p>Stylish skirt for women.</p>
+                <p>Price: 399 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/shampoo.jpg" alt="Shampoo, Conditioner, and Facepacks">
+                <h2>Shampoo & Conditioner</h2>
+                <p>Hair care products.</p>
+                <p>Price: 849 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/shorts-1.jpg" alt="French Sweatshorts">
+                <h2>Shorts</h2>
+                <p>Comfortable French sweatshorts.</p>
+                <p>Price: 499 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/watch-2.jpg" alt="Smart Watch">
+                <h2>Smart Watch</h2>
+                <p>VitalPlus Smart Watch.</p>
+                <p>Price: 1499 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/party-wear-1.jpg" alt="Women's Party Wear Shoes">
+                <h2>Party Wear Shoes</h2>
+                <p>Stylish women's shoes.</p>
+                <p>Price: 1899 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/clothes-2.jpg" alt="Crop Top">
+                <h2>Crop Top</h2>
+                <p>Girls Pink Embroidered Top.</p>
+                <p>Price: 149 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/baby.jpg" alt="Baby Shoes">
+                <h2>Baby Shoes</h2>
+                <p>Cloth shoes for babies.</p>
+                <p>Price: 300 Rs</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/project2.jpg" alt="Hair Accessories">
+                <h2>Hair Accessories</h2>
+                <p>Rubber bands, hair clips, scrunchies.</p>
+                <p>Price: 20 Rs each</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+            <div class="product">
+                <img src="images/paduka.jpg" alt="Padhuka">
+                <h2>Padhuka</h2>
+                <p>Priest chappals.</p>
+                <p>Price: Free</p>
+                <button class="add-to-cart"><a href="cart.html" class="ORDER">ORDER</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for adding products to the cart
+        document.addEventListener("DOMContentLoaded", function () {
+            const addToCartButtons = document.querySelectorAll(".add-to-cart");
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    alert("Product added to cart!");
+                });
+            });
+
+            // Hamburger menu functionality
+            const hamburger = document.getElementById("hamburger");
+            const dropdownMenu = document.getElementById("dropdown-menu");
+
+            hamburger.addEventListener("click", function () {
+                dropdownMenu.classList.toggle("active");
+            });
+        });
+
+         // Toggle the display of the mobile menu
+         function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active'); // Toggle active class to slide menu
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url(images/cta-banner.jpg);
+            background-size: cover;
+        }
+
+        .signup-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 50px;
+            background-color: pink;
+            right: 10%;
+            position: absolute;
+        }
+
+        h2 {
+            text-align: center;
+            font-family:cursive;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup for Online Pharmacy</h2>
+        <form id="signup-form" method="post" action="signup.php">
+           
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="password">
+
+            <label for="password"> confirm Password:</label>
+            <input type="password" id="password" name="confirm password" required placeholder="confirm password">
+            
+            <button type="submit">Signup</button>
+        </form>
+        <h4> for Login click Here !</h4>
+        <a href="login.html">login</a>
+    </div>
+
+    <script>
+       /* document.getElementById("signup-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // You can add your signup logic here using JavaScript
+            // For demonstration purposes, we'll just show an alert
+            alert("Signup successful!");
+        });*/
+    </script>
+</body>
+</html>

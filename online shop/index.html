@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: hotpink;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: large;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        /* Mobile Navigation - White Box */
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute; /* Change to absolute for positioning */
+            top: 60px; /* Position below the navbar */
+            right: 20px; /* Align with the right edge */
+            width: 200px; /* Adjust width as needed */
+            height: auto; /* Allow auto height based on content */
+            justify-content: center;
+            align-items: center;
+            z-index: 999; /* Ensures it's on top */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-20px); /* Slide down effect */
+        }
+
+        .nav-links-mobile.active {
+            display: flex;
+            transform: translateY(0); /* Slide in effect */
+        }
+
+        .nav-links-mobile li {
+            margin: 10px 0;
+        }
+
+        .nav-links-mobile a {
+            color: hotpink;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            background-image: url(images/banner-1.jpg);
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1, a {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .trend {
+            color: hotpink;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            font-size: 28px;
+        }
+
+        .title {
+            color: white;
+        }
+
+        .para {
+            color: black;
+            font-weight: bolder;
+            font-size: large;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            color: black;
+            background-color: sandybrown;
+            border: none;
+            width: 100px;
+            height: 25px;
+            border-radius: 5px;
+        }
+
+        button {
+            color: white;
+            background-color: hotpink;
+            border: none;
+            width: 100px;
+            height: 25px;
+            border-radius: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Display the hamburger menu on smaller screens */
+            .hamburger {
+                display: flex;
+            }
+
+            .main-content {
+                height: 300px;
+            }
+
+            .trend {
+                font-size: 24px;
+            }
+
+            .para {
+                font-size: medium;
+            }
+
+            button {
+                width: 90px;
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar h1 {
+                font-size: 20px;
+            }
+
+            .nav-links a {
+                font-size: medium;
+            }
+
+            .main-content {
+                height: 250px;
+            }
+
+            .title {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .para {
+                font-size: medium;
+            }
+
+            button {
+                width: 80px;
+                height: 35px;
+                font-size: medium;
+            }
+
+            .navbar img {
+                max-width: 60px; /* Scales down the logo image */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logi1.png" alt="shop Logo" style="max-width: 100px;">
+            <h1>Online Shopping</h1>
+        </div>
+
+        <!-- Hamburger Menu (three-bar icon) -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+            
+        </ul>
+
+        <!-- Mobile Navigation Links -->
+        <ul class="nav-links-mobile" id="mobileMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">About Us</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="title">
+            <h1 class="trend">Trending Item</h1>
+            <p class="para">WOMEN'S LATEST FASHION SALE</p>
+            <button><a href="product.html" style="text-decoration: none;">SHOP NOW</a></button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the display of the mobile menu
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active'); // Toggle active class to slide menu
+        }
+    </script>
+</body>
+</html>
